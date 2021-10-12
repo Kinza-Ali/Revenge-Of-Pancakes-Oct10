@@ -1,72 +1,31 @@
-console.log("File is linked..");
-
 document.getElementById("btn1").onclick = function(){
-        inputString = document.getElementById("text1").value;
-        var counter = 0;
-        stringLength = inputString.length;
-        flippedString = '';
-        var flag = happyfaces(inputString);
-        if(flag){
-            flippedString = inputString;
-            console.log("All pancakes has happy faces on top");
-            counter = 0;
-        }
+    inputString = document.getElementById("text1").value;
+    var counter = 0;
+    var flippedString = '';
+    var ishappyFace=true;  
+    var arr = [];
+    stringArray = Array.from(inputString);
+    for (let i =0 ;i<stringArray.length-1; i++){
+        if(stringArray[i]!= stringArray[i+1]){
+            arr = new Array(i+1).fill(stringArray[i+1]);
+            counter++;
+            } 
         else{
-            var notBlankside = blankSidePancakes(inputString);
-
-            if(notBlankside){
-                
-            stringArray = Array.from(inputString) 
-            for (let i =0 ;i<stringArray.length-1; i++){
-                    if(stringArray[i]!= stringArray[i+1]){
-                        for(let j=i;j>=0;j--)
-                        stringArray[j] = stringArray[j+1]
-                        counter++;
-                    }
-                    
+            arr.push(stringArray[i]);
             }
-            
-                inputString = stringArray.join();
-                // check for happy faces and blank faces
-                var happyfaceSideUP = happyfaces(inputString);
-                if(happyfaceSideUP){
-                    flippedString = inputString;
-                }
-                else{
-                    flippedString = inputString.replaceAll('-','+');
-                }
-            
-           }
-           else {
-               console.log("all blank sides flipped to happy faces");
-               flippedString = inputString.replaceAll('-','+');
-               counter=1;
-               
-           }
         }
-        console.log(flippedString+" All pancakes served with happyFace side up with "+counter+" flips!");
-
-        alert(flippedString+" All pancakes served with happyFace side up with "+counter+" flips!");
-        
-}
-
-var happyfaces = function(inputString){
-    var flag = true;
-    for(let i =0 ;i< stringLength; i++){
-        if (inputString[i]== '-'){
-            flag = false;
-            break;
+    arr.push(stringArray[stringArray.length-1])
+    stringArray.forEach(element=> {
+        if(element=='-')
+            ishappyFace = false;
+        });
+    inputString = stringArray.join();
+    if(ishappyFace){
+        flippedString = inputString;  
         }
+    else{
+        flippedString = inputString.replaceAll('-','+');
+        counter++;
+        }
+    alert(flippedString+" All pancakes served with happyFace side up with "+counter+" flips!");
     }
-    return flag;
-}
-var blankSidePancakes = function(inputString){
-    notBlankside = false;
-    for(let i =0 ;i< stringLength; i++){
-        if (inputString[i]== '+'){
-            notBlankside = true;  
-        }
-    }
-    return notBlankside;
-}
-

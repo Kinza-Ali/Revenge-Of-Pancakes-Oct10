@@ -1,0 +1,19 @@
+{
+  "name": "revenge-of-pancakes-oct10",
+  "version": "1.0.0",
+  "description": "Task 1, Flipping the happy faces up of pancakes before serving to the customers.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kinza-Ali/Revenge-Of-Pancakes-Oct10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kinza-Ali/Revenge-Of-Pancakes-Oct10/issues"
+  },
+  "homepage": "https://github.com/Kinza-Ali/Revenge-Of-Pancakes-Oct10#readme"
+}
