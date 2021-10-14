@@ -17,4 +17,4 @@ git clone https://github.com/Kinza-Ali/Revenge-Of-Pancakes-Oct10.git
 2. Javascript
 
 ## Author
-[Kinza Ali](https://github.com/Kinza=Ali)
+[Kinza Ali](https://github.com/Kinza-Ali)
